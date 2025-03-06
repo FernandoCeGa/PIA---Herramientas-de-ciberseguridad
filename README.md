@@ -1,77 +1,102 @@
-=====================================
-PIA - PROGRAMACIÓN PARA CIBERSEGURIDAD
-======================================
-DESCRIPCIÓN DEL PROGRAMA:
+# 🛡️ PIA - Herramientas de Ciberseguridad
 
--Serie de scripts para uso de WebScrapping, Obtención de Metadatos, Envió de Correos, Verificación de Correos, Ver reglas de Firewall bloqueadas, Validar un e-mail mediante uso de API.
+## 📌 Descripción  
+Este proyecto agrupa diversas **herramientas de ciberseguridad** diseñadas para el análisis, monitoreo y protección de sistemas. Incluye scripts de automatización para auditorías de seguridad, análisis de tráfico, pruebas de penetración y generación de reportes. Ideal para profesionales y estudiantes en seguridad informática.
 
--Uso Automatizado sin Intervención entre Procesos.
-=======================================
-MODO DE USO:
--Inicie CMD con dirección el directorio en el que esta el proyecto.
--NOTA: (Puede Utilizar main.py -h o main.py --help para ver los parametros a utilizar).     
--Escoja una opción disponible y agregue los parametros necesarios para su funcionamiento.
+## 🚀 Características  
+✔️ **Escaneo de vulnerabilidades** en sistemas y redes.  
+✔️ **Automatización de auditorías de seguridad**.  
+✔️ **Análisis de tráfico y detección de anomalías**.  
+✔️ **Herramientas para pruebas de penetración básicas**.  
+✔️ **Generación de reportes de seguridad** en PDF y CSV.  
 
--IMPORTANTE:Si hace uso de la opcion de Api de verificación de correos es necesario registrarse en el siguiente url:
-     |----------------> https://rapidapi.com/Top-Rated/api/e-mail-check-invalid-or-disposable-domain/pricing
-     Despues de registrarse seleccionar el plan GRATUITO y listo puede usar sin obstáculos nuestra herramienta.
-     
- En nuestra herramienta, otorgamos las siguientes opciones:
- 
-   -op A     En esta opcion se hace WebScrap a una url dada, se obtienen imágenes, Pdfs, se descargan en su debido 
-               folder, se obtienen sus metadatos, después los metadatos se codifican en base64 y se manda un correo     
-               con éstos reportes obtenidos hacia un correo dado.
-               
-               En esta opción hacemos uso de los argumentos -u -rec
-               enseguida vemos un ejemplo de lo que puede recibir.
-              
-                    Ejemplo de uso
-                              main.py -op A  -u https://www.facebook.com/ -rec example@outlook.com
-                              
-                    Advertencia: Si no se ingresa el url completo no será posible avanzar con el proceso.
-                    
-   -op B     En esta opcion se hace una peticion a una API llamada E-mail Check Invalid or Disposable Domain API 
-               Documentation, donde es necesario el registro mencionado con anterioridad para obtener su APIKEY
-               y poder dar uso a esta API, además de un email dado que pueda verficar.
-               
-               
-              En esta opción hacemos uso de los argumentos -em -k
-               enseguida vemos un ejemplo de lo que puede recibir.
-               
-                    Ejemplo de uso
-                              main.py -em Example@gmail.com  -k XZXZXZXZXZXZXZXZXZXZ
-                    
-   -op C     En esta opcion lo que se hace es enlazar Python con PowerShell, para poder ver las reglas de Bloqueo 
-                  del Firewall
-                  
-                  En esta opcion no es necesario el uso de argumentos por lo tanto
-                  puedes accesar solo con
-                  
-                              main.py -op C
-     
-   -op D     En esta opcion solo se obtiene el FQDN un nombre de dominio completo que incluye el nombre de la 
-               computadora y el nombre de dominio  asociado a ese equipo. 
-               
-                    En esta opcion no es necesario el uso de argumentos por lo tanto
-                    puedes accesar solo con
-                  
-                              main.py -op D
+## 🛠️ Tecnologías Utilizadas  
+- **Python** 🐍 (Automatización y análisis)  
+- **Bash** 🖥️ (Scripts de seguridad para Linux)  
+- **Wireshark/TShark** 🕵️ (Captura de tráfico de red)  
+- **Nmap** 🌐 (Escaneo de redes y puertos)  
+- **Metasploit Framework** 🔥 (Pruebas de penetración)  
 
-   -op E     En esta última opcion lo que se hace es obtener un Universally Unique IDentifier y
-                  con esta misma cambiar de nombre un archivo. -conocer mas 
-                    sobre uuid en : https://www.significados.com/uuid/
-               
-                    En esta opcion no es necesario el uso de argumentos por lo tanto
-                    puedes accesar solo con
-                  
-                              main.py -op E  -arch Reporte_Imagenes.txt
-   
+## 🔧 Requisitos Previos  
+1️⃣ Tener **Python 3.8+** instalado.  
+2️⃣ Acceso a **herramientas de análisis de seguridad** (Wireshark, Nmap, Metasploit).  
+3️⃣ Sistema operativo **Linux o Windows con WSL**.  
 
--Verifique si los parametros son correctos, ya que si estos no lo son el Programa puede Interrumpirse (Se añadira Logs de Errores, Interrupciones, etc en una archivo txt)
+## ⚡ Instalación  
+1. **Clona el repositorio**:  
+   ```bash
+   git clone https://github.com/FernandoCeGa/PIA---Herramientas-de-ciberseguridad.git
+   cd PIA---Herramientas-de-ciberseguridad
+   ```
+2. **Instala las dependencias necesarias**:  
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Ejecuta la herramienta principal**:  
+   ```bash
+   python main.py
+   ```
 
--En el archivo app.log puede encontrar todo lo que esta pasando internamente, desde ver que se esta descargando, el codigo de aceptación de la pagina, la creación de folders,etc..
+## 🎯 Modo de Uso  
 
--NOTA: Puede copiar y pegar datos como Direcciónes de directorios o cadenas de texto sin problema alguno con el funcionamiento del script.
+### **1. Ejecución Automatizada**
+Para ejecutar la herramienta en modo automatizado:
+```bash
+python main.py
+```
+Esto iniciará la secuencia automatizada de todas las funcionalidades integradas en la herramienta.
 
--De ENTER y automaticamente hará los procesos de la opción utilizada
+### **2. Ejecución Manual**
+Para seleccionar funcionalidades específicas:
+```bash
+python main.py -mode Manual
+```
+Aparecerá un menú interactivo donde podrás elegir la herramienta deseada.
+
+### **3. Ejecución con Parámetros Específicos**
+Puedes ejecutar funcionalidades individuales con los siguientes comandos:
+
+- **Envío de Correos**:
+  ```bash
+  python main.py -script Email -dest [correo1,correo2]
+  ```
+- **Escaneo de Puertos**:
+  ```bash
+  python main.py -script Ports -ip 192.168.1.1 -port 8080
+  ```
+- **Web Scraping de Correos**:
+  ```bash
+  python main.py -script WebMail
+  ```
+- **Análisis de Archivos con VirusTotal**:
+  ```bash
+  python main.py -script VirusTotal
+  ```
+
+## 🤝 Contribuciones  
+¡Las contribuciones son bienvenidas! 🚀  
+
+1. **Haz un fork del repositorio** en [GitHub](https://github.com/FernandoCeGa/PIA---Herramientas-de-ciberseguridad/fork).  
+2. **Crea una nueva rama** para tu funcionalidad:  
+   ```bash
+   git checkout -b feature/nueva-funcionalidad
+   ```
+3. **Realiza cambios y haz commit**:  
+   ```bash
+   git commit -m "Añadir nueva funcionalidad"
+   ```
+4. **Sube los cambios al repositorio**:  
+   ```bash
+   git push origin feature/nueva-funcionalidad
+   ```
+5. **Abre una Pull Request** en [este enlace](https://github.com/FernandoCeGa/PIA---Herramientas-de-ciberseguridad/pulls).  
+
+## 📜 Licencia  
+Este proyecto está licenciado bajo la **GNU General Public License v3.0**. Esto significa que tienes la libertad de usar, modificar y distribuir este software, siempre que mantengas la misma licencia en versiones derivadas. Para más información, consulta el archivo [LICENSE](LICENSE) o visita la página oficial de la [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html).
+
+## 📩 Contacto  
+Desarrollado por **Fernando CeGa**.  
+✉️ **Correo:** [fcerecedogi@uanl.edu.mx](mailto:fcerecedogi@uanl.edu.mx)  
+🔗 **GitHub:** [github.com/FernandoCeGa](https://github.com/FernandoCeGa)  
+
 
