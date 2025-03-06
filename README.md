@@ -1,6 +1,6 @@
-=======================================
+=============================================
 PIA - PROGRAMACIÓN PARA CIBERSEGURIDAD
-=======================================
+======================================
 DESCRIPCIÓN DEL PROGRAMA:
 -Serie de scripts para uso de WebScrapping, Obtención de Metadatos, Envió de Correos, Verificación de Correos, Ver reglas de Firewall bloqueadas, Validar un e-mail mediante uso de API.
 -Uso Automatizado sin Intervención entre Procesos.
@@ -65,9 +65,11 @@ MODO DE USO:
                               main.py -op E  -arch Reporte_Imagenes.txt
    
 
-
 -Verifique si los parametros son correctos, ya que si estos no lo son el Programa puede Interrumpirse (Se añadira Logs de Errores, Interrupciones, etc en una archivo txt)
+
 -En el archivo app.log puede encontrar todo lo que esta pasando internamente, desde ver que se esta descargando, el codigo de aceptación de la pagina, la creación de folders,etc..
+
 -NOTA: Puede copiar y pegar datos como Direcciónes de directorios o cadenas de texto sin problema alguno con el funcionamiento del script.
+
 -De ENTER y automaticamente hará los procesos de la opción utilizada
-=======================================
+
